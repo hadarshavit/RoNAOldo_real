@@ -89,15 +89,11 @@ class Python3NaoExample:
 		# animate(forward_csv, self.s)
 		
 		# return
-		model = PPO.load('model_red')
-		obs = [get_ball_position(), (0, 0, 0, 0), (0, 0, 0, 0)]
+		# model = PPO.load('model_red')
+		actions = [0, 2, 3, 4, 5, 6, 7, 1]
 		import numpy as np
-		for i in range(1000):
-			action, _states = model.predict(np.concatenate(obs), deterministic=True)
-			print(action, obs)
-			if obs[0] == (0, 0, 0, 0):
-				action = 1
-				print('shooting')
+		for action in actions:
+			print(action)
 			if action == 0:
 				# forward_csv = pd.read_csv(os.path.join('motions', 'Forwards.csv'))
 				# animate(forward_csv, self.s)
@@ -121,10 +117,9 @@ class Python3NaoExample:
 			elif action == 6:
 				forward_csv = pd.read_csv(os.path.join('motions', 'TurnRight40.csv'))
 				animate(forward_csv, self.s)
-			elif action == 6:
+			elif action == 7:
 				forward_csv = pd.read_csv(os.path.join('motions', 'TurnRight60.csv'))
 				animate(forward_csv, self.s)
-			obs = [get_ball_position()] + obs[: 2]
 			# print(rewards)
 			# if dones[0]:
 				# break
