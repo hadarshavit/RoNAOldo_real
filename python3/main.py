@@ -62,7 +62,7 @@ class Python3NaoExample:
 		for i in range(1000):
 			action, _states = model.predict(np.concatenate(obs), deterministic=True)
 			print(action, obs)
-			if obs[0] == (0, 0, 0, 0) and obs[1] == (0, 0, 0, 0):
+			if obs[0] == (0, 0, 0, 0) and obs[1] == (0, 0, 0, 0) and obs[2] == (0, 0, 0, 0):
 				action = 1
 				print('shooting')
 			if action == 0:
