@@ -10,3 +10,6 @@ python27/naoqiconnection.py -- start python27 bridge
 python3/main.py -- kick a ball code
 
 python3/show_actions.py -- show all actions
+
+
+Bridge is from https://github.com/jandewit/robot-jumpstarter-python3
